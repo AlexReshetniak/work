@@ -1,0 +1,35 @@
+{
+  "ignoreFiles": [
+    "./library/src/scss/_functions.scss",
+    "./library/src/scss/mixins/_sprites.scss",
+    "./library/src/scss/mixins/_breakpoints.scss",
+  ],
+
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "scss/dollar-variable-colon-space-before": "never",
+    "indentation": 2,
+    "no-missing-end-of-source-newline": true,
+    "color-no-invalid-hex": true,
+    "max-empty-lines": 1,
+    "declaration-bang-space-after": "never",
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-block-semicolon-newline-after": "always-multi-line",
+    "declaration-block-trailing-semicolon": "always",
+    "block-closing-brace-empty-line-before": "never",
+    "block-closing-brace-newline-after": "always",
+    "no-extra-semicolons": true,
+    "max-nesting-depth": 3,
+    "number-leading-zero": "always",
+    "string-quotes": "single",
+    "property-case": "lower",
+    "selector-attribute-brackets-space-inside": "never",
+    "rule-empty-line-before": ["always-multi-line", {
+      "except": ["first-nested"],
+      "ignore": ["after-comment"]
+    }]
+  }
+}

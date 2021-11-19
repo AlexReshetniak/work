@@ -1,0 +1,10 @@
+# ignore dist folder compile on server
+dist/
+
+# ignore node dependency directories
+node_modules/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
