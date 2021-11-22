@@ -1,0 +1,13 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+}
+
+@import 'event';
+@import 'office';
+@import 'galleries';
+@import 'pagination'; 

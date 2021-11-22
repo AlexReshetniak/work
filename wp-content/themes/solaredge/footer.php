@@ -11,7 +11,9 @@
 
 ?>
 
-  <footer></footer>
+  <footer class='footer'>
+    <a href="#">SolarEdge Technologies Inc. © All Rights Reserved</a>
+  </footer>
 </div>
 
 <?php wp_footer(); ?>

@@ -1,0 +1,17 @@
+.pagination {
+    >ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+        >li {
+            margin: 0 10px;
+            text-decoration: underline;
+            &:hover {
+                cursor: pointer;
+                color: $red;
+                text-decoration: none;
+            }
+        }
+    }
+}

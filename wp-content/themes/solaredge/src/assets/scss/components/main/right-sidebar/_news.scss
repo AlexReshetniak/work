@@ -1,0 +1,13 @@
+.news {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid $grey;
+    padding:30px;
+    margin-bottom: 35px;
+    &>:last-child {
+        color: $grey-light;
+        font-size: 12px;
+    }
+}

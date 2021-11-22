@@ -1,0 +1,61 @@
+.events {
+    position: relative;
+    width: 100%;
+    border: 1px solid $grey;
+    padding:30px;
+    margin-bottom: 35px;
+    >ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.person-block {
+    display: flex;
+    padding: 30px 0;
+    border-bottom: 1px solid $grey;
+    &:first-child {
+        padding: 0 0 30px;
+    }
+    &:last-child {
+        padding: 30px 0 0;
+        border-bottom: none;
+    }
+    &__photo {
+        display: flex;
+        flex-direction: column;
+        &>p {
+            width: 70px;
+            text-align: center;
+            font-size: 13px;
+            color: $white;
+            background-color: $red;
+            font-weight: 700;
+            margin: 0;
+            bottom: 0;
+        }
+    }
+    &__information {
+        padding: 0 10px;
+        &>p {
+            font-size: 12px;
+            line-height: 22px;
+            text-decoration: underline;
+            color: $grey-light;
+            font-weight: 400;
+            margin: 0;
+            &:hover {
+                color: $grey-hard;
+            }
+        }
+    }
+    &__holiday {
+        display: flex;
+        align-items: center;
+        &>span {
+            font-size: 12px;
+            font-weight: 400;
+            padding: 5px 5px 0;
+        }
+    }
+}
