@@ -47,6 +47,45 @@ get_header();
 								<button class='search__btn' type='submit'><img src="<?= get_field('search_img') ?>" alt="<?= get_field('search_img') ?>"></button>
 					</form>
         </div>
+        <div class='info'>
+          <?php 
+            $info_photo = get_field('info_photo');
+            $info_name = get_field('info_name');
+            $info_contacts = get_field('info_contacts');
+            console_log($info_name);
+          ?>
+          <div>
+            <?php
+            if($info_photo) {
+              ?>
+              <img src="<?= $info_photo?>" alt="<?= $info_photo?>">
+              <?php
+            }
+            if($info_name) {
+              ?>
+              <h6><?= $info_name?></h6>
+              <?php
+            }
+            ?>
+          </div>
+          <ul>
+            <?php 
+              if($info_contacts) {
+                foreach($info_contacts as $row) {
+                  $info_contacts_icon = $row['info_contacts_icon'];
+                  $info_contacts_prefix = $row['info_contacts_prefix'];
+                  $info_contacts_address = $row['info_contacts_address'];
+                  ?>
+                  <li>
+                    <img src="<?= $info_contacts_icon?>" alt="<?= $info_contacts_icon?>">
+                    <a href="<?= $info_contacts_prefix?><?= $info_contacts_address?>"><?= $info_contacts_address?></a>
+                  </li>
+                  <?php
+                }
+              }
+            ?>
+          </ul>
+        </div>
       </div>
       <div class='content'>
         <div class='event'>
