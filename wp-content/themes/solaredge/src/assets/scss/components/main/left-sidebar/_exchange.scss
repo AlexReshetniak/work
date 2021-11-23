@@ -1,0 +1,18 @@
+.exchange {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    border: 1px solid $grey;
+    padding:30px;
+    &>p {
+        margin-top: 0;
+    }
+    & li {
+        display: flex;
+        justify-content: space-around;
+        &:hover {
+            color: $red;
+            cursor: pointer;
+        }
+    }
+}

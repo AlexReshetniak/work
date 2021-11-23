@@ -1,8 +1,13 @@
 .left-sidebar {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 280px;
 }
 
 @import 'search';
+@import 'info';
+@import 'calendar';
+@import 'time';
+@import 'exchange';

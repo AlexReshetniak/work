@@ -1,0 +1,21 @@
+.time {   
+    position: relative;
+    width: 100%;
+    border: 1px solid $grey;
+    padding:30px;
+    margin: 0 0 30px 0;
+    &__city {
+        display: flex;
+        flex-direction: column;
+        &>li {
+            display: flex;
+            justify-content: space-between;
+            &:hover {
+                color: $red;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+

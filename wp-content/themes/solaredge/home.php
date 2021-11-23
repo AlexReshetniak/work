@@ -47,6 +47,186 @@ get_header();
 								<button class='search__btn' type='submit'><img src="<?= get_field('search_img') ?>" alt="<?= get_field('search_img') ?>"></button>
 					</form>
         </div>
+        <div class='info'>
+          <h3 class='title'>INFO</h3>
+          <?php 
+          $info = get_field('info');
+          if($info) {
+            foreach($info as $row) {
+              $info_photo = $row['info_photo'];
+              $info_name = $row['info_name'];
+              $info_contacts = $row['info_contacts'];
+            ?>
+            <div class='info__photo'>
+              <?php
+              if($info_photo) {
+                ?>
+                <img src="<?= $info_photo?>" alt="<?= $info_photo?>">
+                <?php
+              }
+              if($info_name) {
+                ?>
+                <h6><?= $info_name?></h6>
+                <?php
+              }
+              ?>
+            </div>
+            <ul class='info__contacts'>
+              <?php 
+                if($info_contacts) {
+                  foreach($info_contacts as $row) {
+                    $info_contacts_icon = $row['info_contacts_icon'];
+                    $info_contacts_prefix = $row['info_contacts_prefix'];
+                    $info_contacts_address = $row['info_contacts_address'];
+                    ?>
+                    <li class='info__contact'>
+                      <?php
+                      if($info_contacts_icon) {
+                        ?>
+                        <div><img src="<?= $info_contacts_icon?>" alt="<?= $info_contacts_icon?>"></div>
+                        <?php
+                      }
+                      if($info_contacts_address) {
+                        ?>
+                        <a href="<?= $info_contacts_prefix?><?= $info_contacts_address?>"><?= $info_contacts_address?></a>
+                        <?php
+                      }
+                      ?>
+                    </li>
+                    <?php
+                  }
+                }
+              ?>
+            </ul>
+            <?php
+            }
+          }
+          ?>
+        </div>
+        <div class='calendar'>
+          <h3 class='title'>SEARCH</h3>
+          <table id="calendar2">
+            <thead>
+              <tr><td>‹<td colspan="5"><td>›
+              <tr><td>M<td>T<td>W<td>T<td>F<td>S<td>S
+            <tbody>
+          </table>
+          <div class='calendar__events'>
+            <h3>Events at 26 Jan</h3>
+            <ul>
+              <li>
+                <h5>Name</h5>
+                <p>Second event</p>
+              </li>
+              <li>
+                <h5>Dates</h5>
+                <p>Thu, 01/18/2018 – 09:00 - 10:00</p>
+              </li>
+            </ul>
+          </div>
+          <ul class='pagination pagination_circle'>
+            <li><a href=""></a>Prev</li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a>Next </li>
+          </ul>
+        </div>
+        <div class='time'>
+          <h3 class='title'>TIME ZONE</h3>
+          <div></div>
+          <ul class='time__city'>
+            <li>
+              <div>Chicago</div>
+              <div>
+                <span>09:11</span>
+                <span>AM</span>
+              </div>
+            </li>
+            <li>
+              <div>Los Angeles</div>
+              <div>
+                <span>07:11</span>
+                <span>AM</span>
+              </div>
+            </li>
+            <li>
+              <div>Jerusalem</div>
+              <div>
+                <span>17:11</span>
+                <span>PM</span>
+              </div>
+            </li>
+            <li>
+              <div>Tokyo</div>
+              <div>
+                <span>00:11</span>
+                <span>PM</span>
+              </div>
+            </li>
+            <li>
+              <div>Berlin</div>
+              <div>
+                <span>16:11</span>
+                <span>PM</span>
+              </div>
+            </li>
+            <li>
+              <div>Brussels</div>
+              <div>
+                <span>16:11</span>
+                <span>PM</span>
+              </div>
+            </li>
+            <li>
+              <div>Copenhagen</div>
+              <div>
+                <span>16:11</span>
+                <span>PM</span>
+              </div>
+            </li>
+            <li>
+              <div>London</div>
+              <div>
+                <span>15:11</span>
+                <span>PM</span>
+              </div>
+            </li>
+            <li>
+              <div>Paris</div>
+              <div>
+                <span>16:11</span>
+                <span>PM</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class='exchange'>
+          <h3 class='title'>EXCHANGE</h3>
+          <p>Exchange rates for USD</p>
+          <ul>
+            <li>
+              <span>AUD</span>
+              <span>1.2345</span>
+            </li>
+            <li>
+              <span>EUR</span>
+              <span>0.8062</span>
+            </li>
+            <li>
+              <span>ILS</span>
+              <span>3.4046</span>
+            </li>
+            <li>
+              <span>CNY</span>
+              <span>6.3282</span>
+            </li>
+            <li>
+              <span>JPY</span>
+              <span>108.7265</span>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class='content'>
         <div class='event'>
@@ -54,7 +234,7 @@ get_header();
           <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, accusamus!</h5>
           <p class='event__text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quae cumque doloribus deleniti magnam delectus expedita odio qui! Architecto illo exercitationem reiciendis amet blanditiis voluptatibus autem accusamus aliquam, soluta itaque!</p>
           <p class='more-link'><a href="">Read More</a></p>
-          <ul class='event__pagination'>
+          <ul class='pagination'>
             <li><a href=""></a>Prev</li>
             <li><a href=""></a>1</li>
             <li><a href=""></a>2</li>
