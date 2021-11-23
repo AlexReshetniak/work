@@ -43,7 +43,6 @@ h1, h2, h3, h4 {
   font-family: $font-helveticaPoppins;
   font-weight: 300;
   font-size: 30px ;
-  margin: 0;
   @media #{$tab-mediaXL} {
     font-size: 18px;
 }
@@ -52,11 +51,21 @@ h1, h2, h3, h4 {
 
 h5 {
   font-family: $font-helveticaPoppins;
-  font-weight: bold;
-  font-size: 17px ;
-  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
   @media #{$tab-mediaXL} {
     font-size: 13px;
+  }
 }
+h6 {
+  font-size: 14px;
+  color: $text-base;
+  font-weight: 400;
+  margin:0;
+}
+
+p{
+  font-size: 14px;
+  font-weight: 400;
 }
 

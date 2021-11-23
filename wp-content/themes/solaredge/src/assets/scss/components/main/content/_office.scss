@@ -1,0 +1,32 @@
+.office {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $grey;
+    &__head {
+        &>h2 {
+            color: $red;
+        }
+    }
+    &__content {
+        &>h3 {
+            font-size: 14px;
+            color: $red;
+            font-weight: 700;
+        }
+        &>div {
+            display: flex;
+        }
+    }
+    &__description,
+    &__contact {
+        width: 50%;
+        h5 {
+            margin: 0;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+    }
+}

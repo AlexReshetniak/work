@@ -1,0 +1,43 @@
+.event {
+    >h2 {
+        font-size: 24px;
+        font-weight: 400;
+        margin: 0;
+    }
+    >h5 {
+        margin: 30px 0 15px;
+    }
+    &__text {
+        margin: 0;
+    }   
+    &__pagination {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 30px 0;
+            border-top: 1px solid $grey;
+            >li {
+                margin: 0 10px;
+                &:hover {
+                    cursor: pointer;
+                    color: $red;
+                }
+                &:first-child,
+                &:last-child {
+                    text-decoration: underline;
+                }
+                &:first-child {
+                    color: #bababa;
+                }
+            }
+    }
+}
+
+.more-link {
+    text-align: end;
+    color: $red;
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,10 @@
+.right-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 280px;
+}
+
+@import 'news';
+@import 'events';
