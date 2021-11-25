@@ -1,15 +1,25 @@
 .galleries {
     width: 100%;
-    padding-bottom: 30px ;
+    padding:10px 0 40px ;
     border-bottom: 1px solid $grey;
     >ul {
         display: flex;
         flex-wrap: wrap;
+        @media #{$desktop-mediaXl} {
+            justify-content: center;
+            align-items: center;
+        }
         > li {
-            margin: 0 8px 0 0;
+            margin: 0 5px 0 0;
         }
         >:nth-child(3n) {
             margin: 0;
+            @media #{$desktop-mediaXl} {
+                margin: 0 5px 0 0;
+            }
         }
+    }
+    >p {
+        line-height: 24px;
     }
 }

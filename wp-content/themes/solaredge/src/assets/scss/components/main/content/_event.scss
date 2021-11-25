@@ -1,53 +1,55 @@
 .event {
-    >h2 {
-        font-size: 24px;
-        font-weight: 400;
-        margin: 0;
-    }
-    >h5 {
-        margin: 30px 0 15px;
+    width: 100%;
+    &__slide {
+        >h2 {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 24px;
+            margin: 0;
+        }
+        >h5 {
+            margin: 10px 0;
+        }
     }
     &__text {
         margin: 0;
-    }   
+    } 
+    &__slider {
+        padding-bottom: 50px;
+    }
+    &__pagination {
+        top:87%;
+        left: 50%;
+        transform: translateX(-50%);
+        >span {
+            background: none;
+            height: 100%;
+            margin: 0 5px;  
+        }
+    } 
+    &__button-prev::after,
+    &__button-next::after {
+        display: none;
+    } 
+    &__button-prev,
+    &__button-next {
+        color: $grey-light;
+        text-decoration: underline;
+        top:90%;
+        &:hover {
+            color: $text-base;
+        }
+    }
+    &__button-prev {
+        left: 5%;
+    }
+    &__button-next {
+        left: 85%;
+    } 
 }
 
-.pagination {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 30px 0;
-    border-top: 1px solid $grey;
-    >li {
-        margin: 0 10px;
-        &:hover {
-            cursor: pointer;
-            color: $red;
-        }
-        &:first-child,
-        &:last-child {
-            text-decoration: underline;
-        }
-        &:first-child {
-            color: #bababa;
-        }
-    }
-    &_circle {  
-        &>:nth-child(2),
-        &>:nth-child(3),
-        &>:nth-child(4) {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: $grey;
-            margin-top: 10px;
-        }
-        &>:nth-child(2):hover,
-        &>:nth-child(3):hover,
-        &>:nth-child(4):hover {
-            background-color: $red;
-        }
-    }
+.swiper-pagination-bullet-active {
+    color: $red;
 }
 
 .more-link {
@@ -56,5 +58,12 @@
     text-decoration: underline;
     &:hover {
         text-decoration: none;
+    }
+    &_border {
+        padding-bottom: 20px;
+        border-bottom: 1px solid $grey;
+    }
+    &_margin {
+        margin: 0 0 12px;
     }
 }

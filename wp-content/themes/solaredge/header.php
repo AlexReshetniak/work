@@ -29,14 +29,32 @@
 				<img src="<?= get_field('header_foto') ?>" alt="<?= get_field('header_foto') ?>">
 				<a href=""><img src="<?= get_field('header_logout_img') ?>" alt="<?= get_field('header_logout_img') ?>"></a>
 			</div>
+			<div class="hamburger-menu">
+				<input id="menu__toggle" type="checkbox" />
+				<label class="menu__btn" for="menu__toggle">
+					<span></span>
+				</label>
+			</div>
 		</div>
 		<div class='header__menu'>
-			<ul>
-				<li><a href="">HOME</a></li>
-				<li><a href="">HE & WELFARE</a></li>
-				<li><a href="">POLICIES & FORMS</a></li>
-				<li><a href="">DEPARTMENT</a></li>
-			</ul>
+			<?php 
+				wp_nav_menu([
+					'theme_location'=>'top_menu',
+					'container' =>'',
+					'menu_class'=>'',
+					'menu_id'=>'',
+				]);
+			?>
+			<div class='header__menu-hover'>
+			<?php 
+					wp_nav_menu([
+						'theme_location'=>'top_menu',
+						'container' =>'',
+						'menu_class'=>'',
+						'menu_id'=>'',
+					]);
+				?>
+			</div>
 		</div>
 		<div class='header__background'>
 			<img src="<?= get_field('header__background') ?>" alt="<?= get_field('header__background') ?>">

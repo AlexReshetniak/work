@@ -7,11 +7,11 @@ body {
   margin: 0;
   color: $text-base;
   font-family: $font-helveticaPoppins;
-  font-size: 16px;
-  line-height: 27px;
-  font-weight: 300;
-  @media #{$tab-mediaXL} {
-    font-size: 12px;
+  font-size: $lightL-font-size;
+  line-height:  $medium-line-height;
+  font-weight:  $light-font-weigh;
+  @media #{$tab-mediaXl} {
+    font-size: $light-font-size;
 }
 }
 
@@ -41,31 +41,31 @@ a {
 
 h1, h2, h3, h4 {
   font-family: $font-helveticaPoppins;
-  font-weight: 300;
-  font-size: 30px ;
-  @media #{$tab-mediaXL} {
-    font-size: 18px;
+  font-weight:  $light-font-weigh;
+  font-size: $hard-font-size;
+  @media #{$tab-mediaXl} {
+    font-size: $medium-font-size;
 }
 
 }
 
 h5 {
   font-family: $font-helveticaPoppins;
-  font-size: 14px;
-  font-weight: 700;
-  @media #{$tab-mediaXL} {
-    font-size: 13px;
+  font-size: $lightS-font-size;
+  font-weight:  $hard-font-weigh;
+  @media #{$tab-mediaXl} {
+    font-size: $lighXS-font-size;
   }
 }
 h6 {
-  font-size: 14px;
+  font-size: $lightS-font-size;
   color: $text-base;
-  font-weight: 400;
+  font-weight: $lightXS-font-weigh;
   margin:0;
 }
 
 p{
-  font-size: 14px;
-  font-weight: 400;
+  font-size: $lightS-font-size;
+  font-weight: $lightXS-font-weigh;
 }
 

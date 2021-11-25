@@ -2,6 +2,7 @@
   width: 100%;
   background-color: $white;
   &__head {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,8 +10,14 @@
     height: 70px;
     margin: 0 auto;
     padding: 0 40px;
+    @media #{$mob-mediaL} {
+      flex-direction: column;
+      height: 150px;
+      padding: 20px 40px;
+    }
   }
   &__menu {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,10 +29,38 @@
       justify-content: center;
       align-items: center;
       margin: 0 30px;
-      >li {
+      @media #{$mob-mediaXl} {
+        display: none;
+      }
+      > li {
         margin: 0 10px;
+        &:hover {
+          color: $red;
+        }
       }
     }
+  }
+  &__menu-hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-start ;
+    width: 100%;
+    height: 110px;
+    background-color: $grey-light;
+    display: none;
+    >ul {
+      display: flex;
+      flex-direction: column;
+      margin: 0 30px;
+      > li {
+        margin: 0 10px;
+        &:hover {
+          color: $red;
+        }
+      }
+    } 
   }
   &__background {
     display: flex;
@@ -33,10 +68,94 @@
   }
 }
 
+.hamburger-menu {
+  position: absolute;
+  right: 63px;
+  top: 68px;
+  @media #{$desktop-mediaL} {
+    right: 40px;
+    top: 148px;
+  }
+  #menu__toggle {
+    opacity: 0;
+  }
+  .menu__btn {
+    align-items: center; 
+    position: relative;
+    top: -15px;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 5;
+    display: none;
+    @media #{$mob-mediaXl} {
+      display: flex;
+    }
+  }
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: $red;
+}
+
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+
+.menu__box {
+  transition-duration: .25s;
+}
+
+.menu__item {
+  transition-duration: .25s;
+}
+
 .account {
   height: 100%;
   display: flex;
   align-items: center;
+  margin: 0 25px;
+  @media #{$desktop-mediaL} {
+    margin: 0;
+  }
   >img {
     margin: 0 20px;
   }

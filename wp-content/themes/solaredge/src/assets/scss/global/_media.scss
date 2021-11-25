@@ -1,15 +1,20 @@
-$desktop-pointL: 1200px;
-$tab-pointL: 900px;
-$mob-pointL: 500px;
-$mob-point: 600px;
-$extra-Mobpoint: 450px;
+$desktop-pointL: 1150px;
+$desktop-pointXl: 1300px;
+$tab-pointXl: 950px;
+$mob-pointL: 550px;
+$mob-pointXl: 600px;
+$mob-point: 400px;
 
 $screen: "only screen";
 
-$mob-mediaXL: "#{$screen} and (max-width:#{$mob-point})";
+$mob-mediaXl: "#{$screen} and (max-width:#{$mob-pointXl})";
 
 $mob-mediaL: "#{$screen} and (max-width:#{$mob-pointL})";
 
-$tab-mediaXL: "#{$screen} and (max-width:#{$tab-pointL})";
+$mob-media: "#{$screen} and (max-width:#{$mob-point})";
+
+$tab-mediaXl: "#{$screen} and (max-width:#{$tab-pointXl})";
 
 $desktop-mediaL: "#{$screen} and (max-width:#{$desktop-pointL})";
+
+$desktop-mediaXl: "#{$screen} and (max-width:#{$desktop-pointXl})";

@@ -7,6 +7,16 @@
  * @package Digital_Allies
  */
 
+
+add_action('wp_enqueue_scripts', 'my_scripts_react');
+
+add_action('wp_enqueue_scripts', 'enqueue_custom_slider');
+function enqueue_custom_slider(){
+            wp_enqueue_style( 'swiper_css',get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css' );
+
+            wp_enqueue_script('swiper_js',get_stylesheet_directory_uri() . '/assets/js/swiper-bundle.min.js',array('jquery'), null , 'footer');
+}
+
 // WordPress Setup
 require_once 'library/setup.php';
 
@@ -194,26 +204,20 @@ function my_scripts_react() {
 	wp_enqueue_script('like_button',get_stylesheet_directory_uri() . '/assets/js/like_button.js',array('jquery'), null , 'footer');
 }
 
-add_action('wp_enqueue_scripts', 'my_scripts_react');
-
-// add_action( 'wp_enqueue_scripts', 'my_enqueue_theme_js' );
-// function my_enqueue_theme_js() {
-//   wp_enqueue_script(
-//     'my-theme-frontend',
-//     get_stylesheet_directory_uri() . '/build/index.js',
-//     ['wp-element'],
-//     time(), // Change this to null for production
-//     true
-//   );
-// }
-
 function console_log($data) { 
   if(is_array($data) || is_object($data)){
   echo("<script>console.log('php_array: ".json_encode($data)."');</script>");
-} else {
+  } else {
   echo("<script>console.log('php_string: ".$data."');</script>");
+  }
 }
+
+add_action('after_setup_theme','add_menu');
+
+function add_menu(){
+	register_nav_menu('top_menu','top_menu');
 }
+
 
 
 add_action('acf/init', 'acf_init_block_testimonial');

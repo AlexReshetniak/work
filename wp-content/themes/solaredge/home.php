@@ -28,11 +28,13 @@ get_header();
                 if( $clients ) {
                   foreach( $clients as $row ) {
                     $img = $row['clients_img'];
-                    ?>
-                    <li>
-                      <img src="<?php echo $img ?>" alt="<?php echo $img ?>">
-                    </li>
-                    <?php
+                    if($img) {
+                      ?>
+                       <li>
+                        <img src="<?php echo $img ?>" alt="<?php echo $img ?>">
+                      </li>
+                      <?php
+                    }
                   }
                 }
               ?>
@@ -104,37 +106,65 @@ get_header();
           ?>
         </div>
         <div class='calendar'>
-          <h3 class='title'>SEARCH</h3>
-          <table id="calendar2">
+          <h3 class='title'>CALENDAR</h3>
+          <table id="calendar-sheet">
             <thead>
               <tr><td>‹<td colspan="5"><td>›
               <tr><td>M<td>T<td>W<td>T<td>F<td>S<td>S
             <tbody>
           </table>
           <div class='calendar__events'>
-            <h3>Events at 26 Jan</h3>
-            <ul>
-              <li>
-                <h5>Name</h5>
-                <p>Second event</p>
-              </li>
-              <li>
-                <h5>Dates</h5>
-                <p>Thu, 01/18/2018 – 09:00 - 10:00</p>
-              </li>
-            </ul>
+          <h3>Events at 26 Jan</h3>
+            <div class="swiper js-calendar-slider calendar__slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide calendar__slide">
+                  <ul>
+                    <li>
+                      <h5>Name</h5>
+                      <p>Second event</p>
+                    </li>
+                    <li>
+                      <h5>Dates</h5>
+                      <p>Thu,01/18/2018 – 09:00-10:00</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide calendar__slide">
+                  <ul>
+                    <li>
+                      <h5>Name Two</h5>
+                      <p>Second event</p>
+                    </li>
+                    <li>
+                      <h5>Dates</h5>
+                      <p>Thu,01/18/2018 – 09:00-10:00</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide calendar__slide">
+                  <ul>
+                    <li>
+                      <h5>Name Three</h5>
+                      <p>Second event</p>
+                    </li>
+                    <li>
+                      <h5>Dates</h5>
+                      <p>Thu,01/18/2018 – 09:00-10:00</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-pagination js-calendar-pagination calendar__pagination"></div>
+              <div class="swiper-button-prev js-calendar-button-prev calendar__button-prev">Prev</div>
+              <div class="swiper-button-next js-calendar-button-next calendar__button-next">Next</div>
+            </div>
           </div>
-          <ul class='pagination pagination_circle'>
-            <li><a href=""></a>Prev</li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a>Next </li>
-          </ul>
         </div>
         <div class='time'>
           <h3 class='title'>TIME ZONE</h3>
-          <div></div>
+          <div class='time__clock'>
+            <canvas id="canvas" height="150" width="150"></canvas>
+          </div>
           <ul class='time__city'>
             <li>
               <div>Chicago</div>
@@ -229,80 +259,101 @@ get_header();
         </div>
       </div>
       <div class='content'>
-        <div class='event'>
-          <h2>Events</h2>
-          <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, accusamus!</h5>
-          <p class='event__text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quae cumque doloribus deleniti magnam delectus expedita odio qui! Architecto illo exercitationem reiciendis amet blanditiis voluptatibus autem accusamus aliquam, soluta itaque!</p>
-          <p class='more-link'><a href="">Read More</a></p>
-          <ul class='pagination'>
-            <li><a href=""></a>Prev</li>
-            <li><a href=""></a>1</li>
-            <li><a href=""></a>2</li>
-            <li><a href=""></a>3</li>
-            <li><a href=""></a>Next </li>
-          </ul>
-        </div>
-        <div class='office'>
-          <div class='office__head'>
-            <h2>Choose Office</h2>
-            <form class='search__form'>
-                  <input class='search__input search__input_width' type='text' placeholder='Search by City'>
-                  <button class='search__btn search__btn_width' type='submit'><div></div></button>
-            </form>
-          </div>
-          <img src="<?= get_field('office_map_img') ?>" alt="">
-          <div class='office__content'>
-            <h3>Tel Aviv</h3>
-            <div> 
-              <div class='office__description'>
-                <h5>Description</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae et sint, neque harum ab repudiandae error sed esse temporibus, reprehenderit exercitationem distinctio, pariatur facilis quae!</p>
+        <div class="swiper js-content-slider content__slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide content__slide">
+              <div class='event'>
+                <div class="swiper js-event-slider event__slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide event__slide">
+                      <h2>Events</h2>
+                      <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, accusamus!</h5>
+                      <p class='event__text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quae cumque doloribus deleniti magnam delectus expedita odio qui! Architecto illo exercitationem reiciendis amet blanditiis voluptatibus autem accusamus aliquam, soluta itaque!</p>
+                      <p class='more-link more-link_border'><a href="">Read More</a></p>
+                    </div>
+                    <div class="swiper-slide event__slide">
+                      <h2>Events Two</h2>
+                      <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, accusamus!</h5>
+                      <p class='event__text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quae cumque doloribus deleniti magnam delectus expedita odio qui! Architecto illo exercitationem reiciendis amet blanditiis voluptatibus autem accusamus aliquam, soluta itaque!</p>
+                      <p class='more-link more-link_border'><a href="">Read More</a></p>
+                    </div>
+                    <div class="swiper-slide event__slide">
+                      <h2>Events Three</h2>
+                      <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, accusamus!</h5>
+                      <p class='event__text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quae cumque doloribus deleniti magnam delectus expedita odio qui! Architecto illo exercitationem reiciendis amet blanditiis voluptatibus autem accusamus aliquam, soluta itaque!</p>
+                      <p class='more-link more-link_border'><a href="">Read More</a></p>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination js-event-pagination event__pagination"></div>
+                  <div class="swiper-button-prev js-event-button-prev event__button-prev">Prev</div>
+                  <div class="swiper-button-next js-event-button-next event__button-next">Next</div>
+                </div>  
               </div>
-              <ul class='office__contact'>
-                <li>
-                  <h5>Phone</h5>
-                  <a href="">+73 565 26 87</a>
-                </li>
-                <li>
-                  <h5>Email</h5>
-                  <a href="">tel-aviv@solaredge.com</a>
-                </li>
-              </ul>
+              <div class='office'>
+                <div class='office__head'>
+                  <h2>Choose Office</h2>
+                  <form class='search__form'>
+                        <input class='search__input search__input_width' type='text' placeholder='Search by City'>
+                        <button class='search__btn search__btn_width' type='submit'><div></div></button>
+                  </form>
+                </div>
+                <img src="<?= get_field('office_map_img') ?>" alt="">
+                <div class='office__content'>
+                  <h3>Tel Aviv</h3>
+                  <div> 
+                    <div class='office__description'>
+                      <h5>Description</h5>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  reprehenderit exercitationem distinctio, pariatur facilis quae!</p>
+                    </div>
+                    <ul class='office__contact'>
+                      <li>
+                        <h5>Phone</h5>
+                        <a href="">+73 565 26 87</a>
+                      </li>
+                      <li>
+                        <h5>Email</h5>
+                        <a href="">tel-aviv@solaredge.com</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class='galleries'>
+                <h2>Galleries</h2>
+                <ul>
+                  <?php 
+                    $galleries = get_field('galleries');
+                    if($galleries) {
+                      foreach($galleries as $row) {
+                        $galleries_img = $row['galleries_img'];
+                        if($galleries_img) {
+                          ?>
+                           <li><img src="<?= $galleries_img?>" alt="<?= $galleries_img ?>"></li>
+                           <?php
+                        }
+                      }
+                    }
+                  ?>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ea est explicabo at consequuntur ex accusantium aspernatur laborum. Mollitia, recusandae quibusdam cumque nihil exercitationem, velit sequi quidem ex expedita totam, obcaecati aliquid. Est consequatur assumenda nemo reiciendis aperiam laudantium voluptatibus dolorem nostrum dolorum cum, aut minus eveniet excepturi placeat fuga.</p>
+              </div>
+            </div>
+            <div class="swiper-slide content__slide">
+              <h1>Next Page</h1>
             </div>
           </div>
-        </div>
-        <div class='galleries'>
-          <h2>Galleries</h2>
-          <ul>
-            <?php 
-              $galleries = get_field('galleries');
-              if($galleries) {
-                foreach($galleries as $row) {
-                  $galleries_img = $row['galleries_img'];
-                  ?>
-                  <li><img src="<?= $galleries_img?>" alt="<?= $galleries_img ?>"></li>
-                  <?php
-                }
-              }
-            ?>
-          </ul>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ea est explicabo at consequuntur ex accusantium aspernatur laborum. Mollitia, recusandae quibusdam cumque nihil exercitationem, velit sequi quidem ex expedita totam, obcaecati aliquid. Est consequatur assumenda nemo reiciendis aperiam laudantium voluptatibus dolorem nostrum dolorum cum, aut minus eveniet excepturi placeat fuga.</p>
-        </div>
-        <div class='pagination'>
-          <ul>
-            <li><a href="">Page 1</a></li>
-            <li><a href="">Next</a></li>
-          </ul>
+          <div class="swiper-button-prev js-content-button-prev content__button-prev">Page 1</div>
+          <div class="swiper-button-next js-content-button-next content__button-next">Next</div>
         </div>
       </div>
       <div class='right-sidebar'>
         <div class='news'>
           <h3 class='title'>NEWS</h3>
           <img src="<?= get_field('news_img') ?>" alt="<?= get_field('news_img') ?>">
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, doloribus?</h5>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis repellat autem magni dicta dolores eos, facilis modi aut eligendi corrupti.</p>
-          <p class='more-link' ><a href="">Read More</a></p>
-          <p>Submitted by priwashu on Tue,<br> 10/24/2017 - 15:27</p>
+          <h5>Lorem ipsum dolor sit amet consectetur. Sed, doloribus?</h5>
+          <p class='news__text'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis repellat autem magni dicta dolores eos, facilis modi aut eligendi corrupti.</p>
+          <p class='more-link more-link_margin' ><a href="">Read More</a></p>
+          <p class='news__date'>Submitted by priwashu on Tue,<br> 10/24/2017 - 15:27</p>
         </div>
         <div class='events'>
           <h3 class='title'>EVENTS</h3>

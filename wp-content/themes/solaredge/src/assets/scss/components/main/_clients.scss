@@ -1,6 +1,12 @@
 .clients {
     width: 100%;
-    margin: 30px 0 85px;
+    margin: 30px 0 83px;
+    @media #{$tab-mediaXl} {
+        margin: 30px auto;
+    }
+    @media #{$mob-mediaXl} {
+        margin: 0 auto;
+      }
     >ul {
         display: flex;
         justify-content: center;
@@ -8,8 +14,19 @@
         max-width: 1280px;
         margin: 0 auto;
         padding: 0 40px;
+        @media #{$mob-mediaXl} {
+            flex-wrap: wrap;
+          }
         >li {
             margin: 0 25px;
+            @media #{$mob-mediaXl} {
+                margin: 30px;
+              }
+        }
+        img {
+            @media #{$tab-mediaXl} {
+                width: 100px;
+            }
         }
     }
 }

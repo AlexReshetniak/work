@@ -1,11 +1,58 @@
 .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 0 30px;
+    width: 640px;
+    @media #{$desktop-mediaXl} {
+        max-width: 500px;
+    }
+    @media #{$desktop-mediaL} {
+        max-width: 300px;
+    }
+    @media #{$tab-mediaXl} {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    &__slider {
+        padding-bottom: 70px;
+    }
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 30px;
+    } 
+    &__button-prev::after,
+    &__button-next::after {
+        display: none;
+    } 
+    &__button-prev,
+    &__button-next {
+        width: 60px;
+        color: $text-base;
+        text-decoration: underline;
+        font-size: 13px;
+        top:98%;
+        @media #{$mob-media} {
+            top: 99%;
+        }
+        &:hover {
+            color: $red;
+            text-decoration: none;
+        }
+    }
+    &__button-prev {
+        left: 35%;
+        @media #{$tab-mediaXl} {
+            left: 7%;
+        }
+    }
+    &__button-next {
+        left: 55%;
+        @media #{$tab-mediaXl} {
+            left: 75%;
+        }
+    } 
 }
+
 
 @import 'event';
 @import 'office';

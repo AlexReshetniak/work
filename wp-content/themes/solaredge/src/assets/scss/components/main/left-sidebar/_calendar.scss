@@ -1,67 +1,104 @@
 .calendar {
-    position: relative;;
-    width: 100%;
-    border: 1px solid $grey;
-    padding:30px 30px 15px;
-    margin: 0 0 30px 0;
-    &__events {
-      border-bottom: 1px solid $grey;
-      padding: 20px 0;
-      &>h3 {
-        font-size: 14px;
-        color: $red;
-        font-weight: 700;
-        margin: 0 0 10px;
-      }
-      li {
-        margin-bottom: 10px;
-      }
-      h5 {
-        margin: 0;
-      }
-      p {
-        margin: 0;
-      }
+  position: relative;;
+  width: 100%;
+  border: 1px solid $grey;
+  padding:25px 30px 5px;
+  margin: 0 0 35px 0;
+  &__events {
+    padding: 25px 0;
+    &>h3 {
+      font-size: 14px;
+      color: $red;
+      font-weight: 700;
+      margin: 0;
     }
+    h5 {
+      margin: 0;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    p {
+      margin: 0;
+      line-height: 20px;
+    }
+  }
+  &__slider {
+    padding-bottom: 40px;
+  }
+  &__slide {
+    &>ul {
+      padding-bottom: 15px;
+      border-bottom: 1px solid $grey;
+    }
+  }
+  &__pagination {
+    top:88%;
+    left: 50%;
+    transform: translateX(-50%);
+      >span {
+          margin: 0 5px;  
+      }
+  } 
+  &__button-prev::after,
+  &__button-next::after {
+      display: none;
+  } 
+  &__button-prev,
+  &__button-next {
+      color: $grey-light;
+      text-decoration: underline;
+      top:95%;
+      &:hover {
+          color: $text-base;
+      }
+  }
+  &__button-prev {
+      left: 2%;
+  }
+  &__button-next {
+      left: 85%;
+  } 
 }
 
-#calendar2 {
-    width: 100%;
-    font: monospace;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    border-bottom: 1px solid $grey;
-  }
-  #calendar2 thead tr:last-child {
+.swiper-pagination-bullet-active {
+  background: $red;
+}
+
+#calendar-sheet {
+  width: 100%;
+  font: monospace;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+  border-bottom: 1px solid $grey;
+  & thead tr:last-child {
     font-size: small;
     color: rgb(85, 85, 85);
   }
-  #calendar2 thead tr:nth-child(1) td:nth-child(2) {
+  & thead tr:nth-child(1) td:nth-child(2) {
     color:$red;
   }
-  #calendar2 thead tr:nth-child(1) td:nth-child(3),
-  #calendar2 thead tr:nth-child(1) td:nth-child(1) {
+  & thead tr:nth-child(1) td:nth-child(3),
+  & thead tr:nth-child(1) td:nth-child(1) {
     color: $red;
+    font-size: 30px;
+    &:hover {
+      cursor: pointer;
+    }
   }
-
-  #calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
-    cursor: pointer;
+  & tbody td {
+    color: rgb(44, 86, 122);  
   }
-  #calendar2 tbody td {
-    color: rgb(44, 86, 122);
-  }
-  // #calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
-  //   color: rgb(231, 140, 92);
-  // }
-  #calendar2 tbody td.today {
+  & tbody td.today {
     background: $grey;
     border-radius: 50%;
     color: #fff;
   }
-
-  #calendar2 tbody tr:nth-child(4) td:nth-child(5) {
+  & tbody tr:nth-child(4) td:nth-child(5) {
     background-color: $red;
     border-radius: 50%;
     color: $white;
   }
+}
